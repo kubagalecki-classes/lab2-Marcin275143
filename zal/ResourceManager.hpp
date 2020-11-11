@@ -5,10 +5,10 @@
 class ResourceManager
 {
 public:
-    Resource *obiekt;
-    
+    Resource* obiekt;
+
     ResourceManager() {};
-    ~ResourceManager() { delete this->obiekt; }
+    ~ResourceManager() { delete obiekt; }
 
     ResourceManager(const ResourceManager& RM) { *(RM.obiekt) = Resource(); *(RM.obiekt) = *obiekt; }
 
