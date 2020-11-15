@@ -5,9 +5,9 @@
 class ResourceManager
 {
 public:
-    Resource* obiekt;
-
+ 
     ResourceManager() {};
+
     ~ResourceManager() { delete obiekt; }
 
     ResourceManager(const ResourceManager& RM) { *(RM.obiekt) = Resource(); *(RM.obiekt) = *obiekt; }
@@ -15,6 +15,8 @@ public:
     ResourceManager& operator=(const ResourceManager& R) { if (&R != this) { delete obiekt;  *(R.obiekt) = Resource(); *(R.obiekt) = *obiekt; return *this; } }
 
     ResourceManager(ResourceManager&& RP) { obiekt = RP.obiekt; RP.obiekt = nullptr; }
+
+    Resource* obiekt;
 
     double get() { return obiekt->get(); }
 };
